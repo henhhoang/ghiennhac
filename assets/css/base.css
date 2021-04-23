@@ -1,25 +1,31 @@
 :root {
-    -purple-color: #3f3567;
-    -gray-color: #e4e4e4;
-    -white-color: #f9f9f9;
-    -off-white-color: #f9f9f9;
-    -cyan-fade-color: #80b4e0;
-    -text-category-color: #333333;
-    -green-color: #2eae60;
-    -orange-color: #d35400;
-    -text-color: #c000;
-    -cyan-color: #4e7af3;
+    --black: #262626;
+    --blackLow: #232c32;
+    --cyan: #4cb6cb;
+    --green: #1ab667;
+    --white: #ffffff;
+    --violet: #232c32;
+    --gray: #e8eff0;
+    --grayHight: #788188;
+    --red: #f05050;
+    --header_height: 60px
 }
 
 * {
     box-sizing: inherit;
     font-family: 'Alegreya', serif;
+    outline: none;
 }
 
 html {
     font-size: 62.5%;
     line-height: 1.6rem;
     box-sizing: border-box;
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+.container {
+    width: 1200px;
 }
 
 .word-md {
