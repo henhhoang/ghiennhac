@@ -1,18 +1,22 @@
-a, button {
+a, button, label {
     display: inline-block;
     text-align: center;
     border: none;
     background-color: transparent;
     cursor: pointer;
     text-decoration: none;
+    color: inherit;
 }
 
-
 header { 
+    display: block;
     position: fixed;
     height: var(--header_height);
     width: 100%;
     box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    top: 0;
+    background-color: var(--white);
+    z-index: 100;
 }
 
 .header { 
@@ -32,7 +36,6 @@ header {
     color: var(--white);
 }
 
-
 .header__button, .search__button,.notification__button { 
     height: var(--header_height);
     width: 50px;
@@ -40,7 +43,15 @@ header {
     font-size: 1.4rem;
 }
 
-.header__button:hover, .notification__button:hover { 
+.header__button {
+    line-height: var(--header_height);
+}
+
+/* HOVER */
+.header__button:hover,
+.notification__button:hover,
+.profile:hover,
+.profile__box li:hover { 
     background-color: var(--gray);
     color: var(--blackLow);
 }
@@ -61,6 +72,8 @@ header {
 }
 
 .player { 
+    display: flex;
+    align-items: center;
     margin-left: auto;
 }
 
@@ -74,7 +87,7 @@ header {
     font-size: 1.6rem;
 }
 
-.notification__button span {
+.notification__number {
     position: absolute;
     background-color: var(--red);
     min-width: 10px;
@@ -87,6 +100,7 @@ header {
 }
 
 .notification__container { 
+    display: none;
     position: absolute;
     width: 360px;
     right: 0;
@@ -120,7 +134,7 @@ header {
     background-color: var(--gray);
 }
 
-.notification__img {
+.avatar {
     font-size: 3rem;
     width: 40px;
     height: 40px;
@@ -129,9 +143,9 @@ header {
     color: var(--green);
 }
 
-.notification__img img{
-    max-width: 100%;
-    height: 100%;
+.avatar img{
+    width: 40px;
+    height: 40px;
     border-radius: 50%;
 }
 
@@ -162,6 +176,413 @@ header {
 }
 
 .profile { 
+    display: flex;
+    position: relative;
+    align-items: center;
+    height: var(--header_height);
+    padding-left: 10px;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+.profile__name { 
+    font-size: 1.4rem;
+    color: var(--grayHight);
+    padding: 0 15px;
+}
+
+.profile__name i{ 
+    font-size: 1.2rem;
+}
+
+.profile__box { 
+    position: absolute;
+    width: 160px;
+    bottom: 0;
+    transform: translateY(100%);
+    border: 1px solid var(--grayHight);   
+}
+
+.profile__box::after { 
+    content: '';
+    position: absolute;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid var(--white);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.profile__box::before { 
+    content: '';
+    position: absolute;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 8px solid var(--grayHight);
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -100%);
+}
+
+.profile__box ul{ 
+    padding: 10px 0;
+}
+
+.profile__box li{ 
+    padding: 5px 0 5px 15px;
+}
+
+.profile__box li a{ 
+    display: flex;
+    text-align: left;
+    width: 100%;
+    font-size: 1.5rem;
+    color: var(--text);
+}
+
+.profile__box li:last-child{ 
+    border-top: 1px solid var(--grayHight);
+    padding-bottom: 0;
+    margin-top: 10px;
+}
+
+.profile__box li a .notification__number{
+    position: unset;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+.wapper {
+    margin-top: var(--header_height);
+}
+
+.nav-container {
+    width: 70px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 60px;
+    background-color: #181F24;
+}
+
+.nav {
+    background-color: var(--nav-color);
+    color: #627b8c;
+}
+
+.nav > span{
+    display: block;
+    padding-top: 10px;
+    padding-left: 10px;
+    font-size: 1.3rem;
+}
+
+.nav__list { 
+    background-color: var(--nav-color);
+    padding: 10px 0;
+}
+
+.nav__list.list-setting {
+    background-color: #181F24;
+}
+
+.nav__items { 
+    color: #8ca1af;
+    text-align: center;
+    cursor: pointer;
+}
+
+.nav__items:hover { 
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--white);
+} 
+
+.nav__items:hover .nav__link i{ 
+    transform: translateY(-100%);
+} 
+
+.nav__items:hover .nav__link span{ 
+    transform: translateY(-60%);
+} 
+
+.nav__link { 
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: inherit;
+    width: 100%;
+    height: 50px;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav__link i{ 
+    line-height: 50px;
+    height: 50px;
+    display: block;
+    transition: 0.3s ease-in;
+}
+
+.nav__link span{ 
+    display: block;
+    height: 50px;
+    font-size: 1.2rem;
+    transition: 0.2s ease-in;
+}
+
+.product { 
+    margin-top: 60px;
+    margin-left: 70px;
+    padding: 0 30px;
+    width: calc(100% - 70px - 240px);
+    background-color: #F2F4F8;
+}
+
+.discover {
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--grayHight);
+    cursor: default;
+    padding-top: 20px;
+}
+
+.product__items { 
 
 }
+
+.product__song { 
+    position: relative;
+}
+
+.product__top { 
+    height: 245px;
+    position: relative;
+    background-image: url(../img/item1.jpg);
+    background-position: center;
+    background-size: cover;
+    border-radius: 6px;
+}
+
+.product__time { 
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    min-width: 10px;
+    border-radius: 10px;
+    padding: 1px 7px;
+    background-color: #4cb6cb;
+    color: var(--white);
+    font-weight: 500;
+    font-size: 1.2rem;
+
+}
+
+.product__bottom { 
+    padding: 15px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.product__name { 
+    font-size: 1.5rem;
+    color: #545a5f;
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+.product__singer { 
+    text-align: left;
+    font-size: 1.3rem;
+    color: var(--grayHight);
+}
+
+.product__singer:hover,
+.product__name:hover {
+    color: var(--text);
+}
+
+.product__top:hover .product__play-container {
+    opacity: 1;
+    visibility: visible;
+}
+
+.product__play-container { 
+    opacity: 0;
+    visibility: hidden;
+    position: relative;
+    height: 245px;
+    background-color: rgba(0,0,0,0.75);
+    top: 0;
+    left: 0;
+    border-radius: 6px;
+}
+
+.product__star { 
+    font-size: 1.2rem;
+    color: var(--cyan);
+    padding: 10px;
+}
+
+.product__play { 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    color: var(--grayHight);
+}
+
+.product__padder { 
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    justify-content: space-between;
+    padding: 5px 10px;
+    font-size: 1.3rem;
+}
+
+.prodcut__like { 
+    color: var(--grayHight);
+
+}
+
+.prodcut__heart { 
+    color: var(--red);
+}
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #242D33;
+}
+
+.footer-container { 
+    height: 100%;
+    align-items: center;
+}
+
+.control-left { 
+    background-color: #5A6A7A;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.control-left button{ 
+    font-size: 2rem;
+    color: var(--white);
+    padding: 0 7px;
+}
+
+.pauseBtn { 
+    font-size: 2.6rem !important;
+}
+
+.footer.playing .icon-pause{
+    display: inline-block;
+}
+
+.icon-pause {
+    display: none;
+}
+
+.footer.playing .icon-play {
+    display: none;
+}
+
+.nextBtn { 
+
+}
+
+.listBtn { 
+
+}
+
+.range-container { 
+    background-color: #4D5D6E;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.name-song {
+    font-size: 1.7rem;
+    color: var(--white);
+}
+
+.progress-container {
+    position: relative;
+    width: 90%;
+}
+
+.progress {
+    width: 100%;
+    appearance: none;
+    height: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: 0.2s;
+    transition: opacity 0.2s;
+
+}
+
+.progress-fill {
+    position: absolute;
+    width: 0;
+    height: 5px;
+    left: 0;
+    top: 6px;
+    border-radius: 5px;
+    background-color: black;
+}
+
+.progress::-webkit-slider-thumb {
+    opacity: 0;
+}
+
+
+.control-right { 
+    margin-left: auto;
+    background-color: #5A6A7A;
+    height: 100%;
+    align-items: center;
+}
+
+.control-right button, .control-right > span{ 
+    font-size: 1.3rem;
+    color: var(--grayHight);
+    padding: 0 8px;
+}
+
+.control-right button.active{ 
+    color: var(--gray);
+}
+
+.time { 
+    display: block;
+}
+
+.muteBtn { 
+
+}
+
+.footer .header__search, .footer .header__search .search__input{ 
+    background-color: #242D33;
+    color: var(--white);
+}
+
+
+
+
+
+
+
+
 

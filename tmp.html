@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/resset.css">
+    <link rel="stylesheet" href="./assets/css/gird.css">
+    <link rel="stylesheet" href="./assets/css/base.css">
+    <link rel="stylesheet" href="./assets/library/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="./assets/css/main.css">
+    <link rel="stylesheet" href="./assets/css/reponsive.css">
+</head>
+<body>
+    <div id="root">
+        <div id="app">
+            
+            <header>
+                <div class="header">
+                    <a href="#" class="header__home"><i class="fas fa-headphones-alt"></i></a>
+                    <label class="header__button" for="header__button"><i class="fas fa-stream"></i></label>
+                    <input type="checkbox" id="header__button" class="display-none">
+                    <div class="header__search">
+                        <button class="search__button"><i class="fas fa-search"></i></button>
+                        <input type="input" class="search__input" placeholder="Search songs, ablums">
+                    </div>
+
+                    <div class="player">
+                        <div class="notification">
+                            <button class="notification__button">
+                                <i class="far fa-bell"></i>
+                                <span class="notification__number">3</span>
+                            </button>
+                            
+                            <div class="notification__container">
+                                <h4>You have <strong>3</strong> notifications</h4>
+                                <div class="notification__from">
+                                    <a href="#" class="notification__group">
+                                        <span class="notification__img"><i class="far fa-envelope"></i></span>
+                                        <span class="notification__content">
+                                            <span>Sophi sent you a email</span>
+                                            <br>
+                                            <small>1 minutes ago</small>
+                                        </span>
+                                    </a>
+                                    <a href="#" class="notification__group">
+                                        <span class="avatar">
+                                            <img src="./assets/img/avatar.png">
+                                        </span>
+                                        <span class="notification__content">
+                                            <span>Sophi sent you a email</span>
+                                            <br>
+                                            <small>10 minutes ago</small>
+                                        </span>
+                                    </a>
+                                    <a href="#" class="notification__group">
+                                        <span class="notification__content">
+                                            <span> 1.0 initial released</span>
+                                            <br>
+                                            <small>15 minutes ago</small>
+                                        </span>
+                                    </a>
+                                </div>
+                                <div class="notification__seting">
+                                    <span>See all the notifications</span>
+                                    <button class="cog"><i class="fas fa-cog"></i></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="profile">
+                            <a href="#" class="profile__name">John.Smith <i class="fas fa-caret-down"></i></a>
+                            <span class="avatar">
+                                <img src="./assets/img/avatar.png">
+                            </span>
+                            <div class="profile__box display-none">
+                                <ul>
+                                    <li><a href="#">Setting</a></li>
+                                    <li><a href="#">Profile</a></li>
+                                    <li><a href="#">Notification <span class="notification__number">3</span></a></li>
+                                    <li><a href="#">Help</a></li>
+                                    <li><a href="#">Logout</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </header>
+
+            <div class="wapper">
+                <div>
+                    <div class="nav-container">
+                        <nav class="nav">
+                            <span>Discover</span>
+                            <ul class="nav__list list-music small">
+                                <li class="nav__items">
+                                    <a href="#" class="nav__link">
+                                        <i class="cd fas fa-compact-disc"></i>
+                                        <span>What's New</span>
+                                    </a>
+                                </li>
+                                <li class="nav__items">
+                                    <a href="#" class="nav__link">
+                                        <i class="Genres fas fa-music"></i>
+                                        <span>Genres</span>
+                                    </a>
+                                </li>
+                                <li class="nav__items">
+                                    <a href="#" class="nav__link">
+                                        <i class="Events fas fa-archive"></i>
+                                        <span>Events</span>
+                                    </a>
+                                </li>
+                                <li class="nav__items">
+                                    <a href="#" class="nav__link">
+                                        <i class="Listen fas fa-list"></i>
+                                        <span>Listen</span>
+                                    </a>
+                                </li>
+                                <li class="nav__items">
+                                    <a href="#" class="nav__link">
+                                        <i class="Video fab fa-youtube"></i>
+                                        <span>Video</span>
+                                    </a>
+                                </li>
+                            </ul>
+                            <ul class="nav__list list-setting small">
+                                <li class="nav__items">
+                                    <a href="#" class="nav__link">
+                                        <i class="cd fas fa-compact-disc"></i>
+                                        <span>What's New</span>
+                                    </a>
+                                </li>
+                                <li class="nav__items">
+                                    <a href="#" class="nav__link">
+                                        <i class="Genres fas fa-music"></i>
+                                        <span>Genres</span>
+                                    </a>
+                                </li>
+                                <li class="nav__items">
+                                    <a href="#" class="nav__link">
+                                        <i class="Events fas fa-archive"></i>
+                                        <span>Events</span>
+                                    </a>
+                                </li>
+                                <li class="nav__items">
+                                    <a href="#" class="nav__link">
+                                        <i class="Listen fas fa-list"></i>
+                                        <span>Listen</span>
+                                    </a>
+                                </li>
+                                <li class="nav__items">
+                                    <a href="#" class="nav__link">
+                                        <i class="Video fab fa-youtube"></i>
+                                        <span>Video</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+
+                    <div id="product" class="product">
+                        <h3 class="discover">
+                            Discover
+                            <span>
+                            </span>
+                        </h3>
+                        <div class="row">
+                            <div class="product__items col c-2">
+                                <div class="product__song">
+                                    <div class="product__top" style="background-image: url(./assets/img/item1.jpg);">
+                                        <span class="product__time">03:20</span>
+                                        <div class="product__play-container">
+                                            <div class="product__star flex">
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                                <i class="fas fa-star"></i>
+                                            </div>
+                                            <div class="product__play">
+                                                <a href="#"><i class="fas fa-play"></i></a>
+                                            </div>
+                                            <div class="product__padder flex">
+                                                <a href="#" class="prodcut__like">
+                                                    <i class="fas fa-plus-circle"></i>
+                                                </a>
+                                                <a href="#" class="prodcut__heart">
+                                                    <i class="fas fa-heart"></i>
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="product__bottom">
+                                        <a href="#" class="product__name">Xuất Sơn</a>
+                                        <a href="#" class="product__singer">Thất</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="footer">
+                <div class="footer-container flex">
+
+                    <div class="profile">
+                        <span class="avatar">
+                            <img src="./assets/img/avatar.png">
+                        </span>
+                        <div class="profile__box display-none">
+                            <ul>
+                                <li><a href="#">Setting</a></li>
+                                <li><a href="#">Profile</a></li>
+                                <li><a href="#">Notification <span class="notification__number">3</span></a></li>
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Logout</a></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="control-left flex">
+                        <button class="prevBtn">
+                            <i class="fas fa-backward"></i>
+                        </button>
+
+                        <button class="pauseBtn">
+                            <i class="fas fa-play icon-play"></i>
+                            <i class="fas fa-pause icon-pause"></i>
+                        </button>
+
+                        <button class="nextBtn">
+                            <i class="fas fa-forward"></i>
+                        </button>
+
+                        <button class="listBtn">
+                            <i class="fas fa-list"></i>
+                        </button>
+                    </div>
+
+                    <div class="range-container flex">
+                        <span class="name-Song">Đau để trưởng thành</span>
+                        <div class="progress-container">
+                            <input class="progress" type="range" min="0" max="100" value="0">
+                            <span class="progress-fill"></span>
+                        </div>
+                    </div>
+
+                    <div class="control-right flex">
+                        <span class="time">00:00</span>
+                        <button class="muteBtn">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                        <button class="muteBtn">
+                            <i class="fas fa-random"></i>
+                        </button>
+                        <button class="muteBtn">
+                            <i class="fas fa-undo"></i>
+                        </button>
+                    </div>
+
+                    <div class="header__search flex">
+                        <button class="search__button"><i class="fas fa-search"></i></button>
+                        <input type="input" class="search__input" placeholder="Search songs, ablums">
+                    </div>
+                    <audio id="audio" src=""></audio>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <script src="./assets/js/main.js" type="module"></script>
+</body>
+</html>
