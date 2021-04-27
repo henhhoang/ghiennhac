@@ -5,11 +5,11 @@ function Footer() {
         <div class="footer">
             <div class="footer-container flex">
 
-                <div class="profile">
+                <div class="profile clickToggle main">
                     <span class="avatar">
                         <img src="./assets/img/avatar.png">
                     </span>
-                    <div class="profile__box display-none">
+                    <div class="profile__box bottom">
                         <ul>
                             <li><a href="#">Setting</a></li>
                             <li><a href="#">Profile</a></li>
@@ -40,7 +40,7 @@ function Footer() {
                 </div>
 
                 <div class="range-container flex">
-                    <span class="name-song">Đau để trưởng thành</span>
+                    <span class="name-song"></span>
                     <div class="progress-container">
                         <input class="progress" type="range" min="0" max="100" value="0">
                         <span class="progress-fill"></span>

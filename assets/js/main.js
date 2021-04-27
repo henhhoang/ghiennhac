@@ -11,6 +11,8 @@ const songs = init.songs;
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+const app = $('#app');
+const clickToggle = $$('.clickToggle');
 const audio = $('#audio');
 const playBtn = $('.pauseBtn');
 const nameSong = $('.name-song');
@@ -18,10 +20,12 @@ const player = $('.footer');
 const btnNext = $('.nextBtn');
 const btnPrev = $('.prevBtn');
 const btnRepeat = $('.repeatBtn');
+const btnRandom = $('.randomBtn');
 const time = $('.time')
 const progress = $('.progress');
 const progressFill = $('.progress-fill');
 const product = $('.songs');
+const btnNav = $('.header__button');
 
 
 console.log()
@@ -31,6 +35,9 @@ const musicApp = {
     isPlaying: false,
     isUpdateTime: true,
     isRepeat: false,
+    isRandom: false,
+    isOpenNav: false,
+    isLoad: undefined,
     currentIndex: 0,
 
     //Dinh dang phuong thuc
@@ -53,7 +60,7 @@ const musicApp = {
             } else {
               audio.play();
             }
-          }
+        }
 
         // khi song duoc play
         audio.onplay = function() {
@@ -83,8 +90,10 @@ const musicApp = {
         audio.onended = function() {
           if (_this.isRepeat) {
               audio.play();
+
           } else {
               btnNext.click();
+              $('.product__items.played') ? $('.product__items.played').classList.remove('played') : undefined;
           }
         }
 
@@ -95,7 +104,6 @@ const musicApp = {
               const progressPercent = Math.floor(audio.currentTime / audio.duration * 100);
               progress.value = progressPercent;
               progressFill.style.width = `${(audio.currentTime / audio.duration * 100).toFixed(1)}%`;
-
               time.textContent = `${_this.getSongTime(Math.floor(audio.currentTime)*1000)}`
               
             }
@@ -123,14 +131,36 @@ const musicApp = {
           this.classList.toggle('active', _this.isRepeat);
         }
 
+        //Xu ly khi random
+        btnRandom.onclick = function() {
+          _this.isRepeat = !_this.isRepeat;
+          this.classList.toggle('active', _this.isRepeat);
+        }
 
         //Phat bai hat nguoi dung click
         product.onclick = function(e) {
-          const songNode = e.target.closest('.product__play-container');
-          if (songNode) {
-            if (e.target.closest('.played')) {
-              _this.loadSongWhenClick(e.target.dataset.song);
-              audio.play()
+          const productElement = e.target.closest('.product__items');
+          const productPlayed = $('.product__items.played')
+          if (productElement) {
+            let dataSong = productElement.dataset.song;
+            if (e.target.closest('.product__play')) {
+              if (_this.isLoad === dataSong) {
+                if (_this.isPlaying) {
+                  audio.pause();
+                  productElement.classList.remove('played');
+                } else {
+                  audio.play();
+                  productElement.classList.add('played');
+                }
+              } else {
+                
+                _this.isLoad = dataSong;
+                _this.loadSongWhenClick(dataSong)
+                _this.isPlaying = true;
+                productPlayed ? productPlayed.classList.remove('played') : undefined;
+                productElement.classList.add('played');
+                audio.play();
+              }
             }
           }
         }
@@ -141,7 +171,7 @@ const musicApp = {
 
     //load bai hat trong list
     loadCurrentSong: function() {
-      nameSong.textContent = this.currentSong.name;
+      nameSong.textContent = `${this.currentSong.name} - ${this.currentSong.singer}`;
       audio.src = this.currentSong.path;
     },
 
@@ -166,8 +196,8 @@ const musicApp = {
 
     //Load bai hat chon
     loadSongWhenClick: function(id) {
-      let song = songs[id];
-      nameSong.textContent = song.name;
+      var song = songs.find( item => item.id == id)
+      nameSong.textContent = `${song.name} - ${song.singer}`;
       audio.src = song.path;
     },
 
@@ -187,6 +217,35 @@ const musicApp = {
         this.loadCurrentSong();
     },
 
+    //Open setting
+    openSetting: function() {
+      const _this = this;
+
+      // Open nav
+      btnNav.onclick = function() {
+        _this.isOpenNav = !_this.isOpenNav;
+        app.classList.toggle('open-nav', _this.isOpenNav)
+        app.classList.toggle('off-nav', !_this.isOpenNav)
+      };
+
+      //Open profile
+      app.onclick = function(e) {
+        const profileElement = e.target.closest('.clickToggle.main');
+        if (profileElement) {
+          profileElement.classList.toggle('show-profile');
+        } else if (!profileElement) {
+          clickToggle.forEach( item => {
+            if (item.classList.contains('show-profile')) {
+              item.classList.remove('show-profile')
+            }
+          });
+        }
+      }
+      
+    },
+    
+
+
 
 
     start: function() {
@@ -196,6 +255,8 @@ const musicApp = {
       this.handleEvents();
 
       this.loadCurrentSong();
+
+      this.openSetting();
 
     }
 

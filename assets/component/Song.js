@@ -4,7 +4,7 @@ import { connect } from '../js/store.js'
 
 function Song( {song, index} ) {
     return html`
-        <div class="product__items col c-2">
+        <div class="product__items col c-2" data-song="${song.id}">
             <div class="product__song">
                 <div class="product__top" style="background-image: url(${song.image});">
                     <span class="product__time">03:20</span>
@@ -16,8 +16,11 @@ function Song( {song, index} ) {
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <div class="product__play played">
-                            <a><i class="fas fa-play" data-song="${song.id}"></i></a>
+                        <div class="product__play">
+                            <a>
+                                <i class="fas fa-play"></i>
+                                <i class="fas fa-pause"></i>
+                            </a>
                         </div>
                         <div class="product__padder flex">
                             <a href="#" class="prodcut__like">

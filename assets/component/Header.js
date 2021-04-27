@@ -5,7 +5,7 @@ function Header() {
     return html`
         <header>
             <div class="header">
-                <a href="#" class="header__home"><i class="fas fa-headphones-alt"></i></a>
+                <a href="#" class="header__home"><i class="fas fa-headphones-alt"></i>Musik</a>
                 <label class="header__button" for="header__button"><i class="fas fa-stream"></i></label>
                 <input type="checkbox" id="header__button" class="display-none">
                 <div class="header__search">
@@ -14,7 +14,7 @@ function Header() {
                 </div>
 
                 <div class="player">
-                    <div class="notification">
+                    <div class="notification clickToggle main">
                         <button class="notification__button">
                             <i class="far fa-bell"></i>
                             <span class="notification__number">3</span>
@@ -24,7 +24,9 @@ function Header() {
                             <h4>You have <strong>3</strong> notifications</h4>
                             <div class="notification__from">
                                 <a href="#" class="notification__group">
-                                    <span class="notification__img"><i class="far fa-envelope"></i></span>
+                                    <span class="notification__img avatar">
+                                        <i class="far fa-envelope"></i>
+                                    </span>
                                     <span class="notification__content">
                                         <span>Sophi sent you a email</span>
                                         <br>
@@ -56,12 +58,12 @@ function Header() {
                         </div>
                     </div>
 
-                    <div class="profile">
+                    <div class="profile clickToggle main">
                         <a href="#" class="profile__name">John.Smith <i class="fas fa-caret-down"></i></a>
                         <span class="avatar">
                             <img src="./assets/img/avatar.png">
                         </span>
-                        <div class="profile__box display-none">
+                        <div class="profile__box">
                             <ul>
                                 <li><a href="#">Setting</a></li>
                                 <li><a href="#">Profile</a></li>

@@ -5,7 +5,7 @@ function Nav() {
     return html`
         <nav class="nav">
             <span>Discover</span>
-            <ul class="nav__list list-music small">
+            <ul class="nav__list list-music">
                 <li class="nav__items">
                     <a href="#" class="nav__link">
                         <i class="cd fas fa-compact-disc"></i>

@@ -9,7 +9,7 @@ import { connect } from '../js/store.js'
 
 function App() {
     return html`
-        <div id="app">
+        <div id="app" class="off-nav">
             ${Header()}
             ${Wapper()}
             ${Product()}

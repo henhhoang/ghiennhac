@@ -72,6 +72,64 @@ const init = {
             path: './assets/songs/xuatson.mp3',
             image: './assets/img/item1.jpg'
         }
+        ,
+        {
+            id: 10,
+            name: 'Một triệu khả năng',
+            singer: 'Trần Trân',
+            path: './assets/songs/1trieukhanang.mp3',
+            image: './assets/img/item1.jpg'
+        },
+        {
+            id: 11,
+            name: 'I Love You 3000',
+            singer: 'Trần Trân',
+            path: './assets/songs/3000.mp3',
+            image: './assets/img/item1.jpg'
+        },
+        {
+            id: 12,
+            name: 'EDM Sáo Trúc',
+            singer: 'Trần Trân',
+            path: './assets/songs/edmsao.mp3',
+            image: './assets/img/item1.jpg'
+        },
+        {
+            id: 13,
+            name: 'Em bằng lòng làm một người bình thường bên anh',
+            singer: 'Trần Trân',
+            path: './assets/songs/embanglong.mp3',
+            image: './assets/img/item1.jpg'
+        },
+        {
+            id: 14,
+            name: 'Futari',
+            singer: 'Trần Trân',
+            path: './assets/songs/futari.mp3',
+            image: './assets/img/item1.jpg'
+        },
+        {
+            id: 15,
+            name: 'Giang hải không độ nàng',
+            singer: 'Trần Trân',
+            path: './assets/songs/gianghai.mp3',
+            image: './assets/img/item1.jpg'
+        },
+        {
+            id: 16,
+            name: 'Tam thốn nhân gian',
+            singer: 'Trần Trân',
+            path: './assets/songs/tamthon.mp3',
+            image: './assets/img/item1.jpg'
+        },
+        {
+            id: 17,
+            name: 'Thay tôi yêu cô ấy',
+            singer: 'Trần Trân',
+            path: './assets/songs/thaytoi.mp3',
+            image: './assets/img/item1.jpg'
+        }
+        
     ]
     
 }

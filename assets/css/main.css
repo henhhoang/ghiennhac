@@ -1,3 +1,4 @@
+
 a, button, label {
     display: inline-block;
     text-align: center;
@@ -34,6 +35,7 @@ header {
     font-weight: 500;
     background-color: var(--cyan);
     color: var(--white);
+    
 }
 
 .header__button, .search__button,.notification__button { 
@@ -99,12 +101,20 @@ header {
     right: 8px;
 }
 
+.notification.show-profile .notification__container{
+    display: block;
+    animation-name: fadeInUp;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
 .notification__container { 
     display: none;
     position: absolute;
     width: 360px;
     right: 0;
     border: 1px solid var(--grayHight);
+    background-color: var(--white);
 }
 
 .notification__container h4 { 
@@ -195,12 +205,49 @@ header {
     font-size: 1.2rem;
 }
 
+.profile.show-profile .profile__box{
+    display: block;
+    animation-name: rightIn;
+    animation-duration: 0.5s;
+    animation-fill-mode: both;
+}
+
+@keyframes rightIn {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateX(0);
+    }
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+}
+
 .profile__box { 
+    display: none;
     position: absolute;
     width: 160px;
-    bottom: 0;
-    transform: translateY(100%);
+    top: 100%;
+    right: 0;
     border: 1px solid var(--grayHight);   
+    background-color: var(--white);
+}
+
+.profile__box.bottom { 
+    top: auto;
+    left: 0;
+    bottom: 100%;
 }
 
 .profile__box::after { 
@@ -223,6 +270,20 @@ header {
     top: 0;
     left: 50%;
     transform: translate(-50%, -100%);
+}
+
+.profile__box.bottom::after {
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid var(--white);
+    transform: translate(-50%, 0%);
+    top: 100%;
+}
+
+.profile__box.bottom::before {
+    border-bottom: 8px solid transparent;
+    border-top: 8px solid var(--grayHight);
+    transform: translate(-50%, 0%);
+    top: 100%;
 }
 
 .profile__box ul{ 
@@ -264,7 +325,21 @@ header {
     left: 0;
     top: 60px;
     background-color: #181F24;
+    z-index: 100;
 }
+
+/* open Nav */
+#app.open-nav .nav-container {
+    width: 200px;
+}
+#app.open-nav .header__home {
+    width: 200px;
+}
+
+#app.open-nav .header__home i{
+    margin-right: 15px;
+}
+
 
 .nav {
     background-color: var(--nav-color);
@@ -298,13 +373,20 @@ header {
     color: var(--white);
 } 
 
-.nav__items:hover .nav__link i{ 
+#app.off-nav .nav__items:hover .nav__link i{ 
     transform: translateY(-100%);
 } 
 
-.nav__items:hover .nav__link span{ 
-    transform: translateY(-60%);
+#app.off-nav .nav__items:hover .nav__link span{ 
+    transform: translateY(-90%);
 } 
+
+#app.open-nav .nav__link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 25px;
+}
 
 .nav__link { 
     font-size: 1.8rem;
@@ -316,9 +398,18 @@ header {
     overflow: hidden;
 }
 
+
+#app.open-nav .nav__link i, #app.open-nav .nav__link span{
+    width: unset;
+    padding: 0 10px;
+    font-size: 1.4rem;
+}
+
 .nav__link i{ 
     line-height: 50px;
     height: 50px;
+    line-height: 50px;
+    width: 100%;
     display: block;
     transition: 0.3s ease-in;
 }
@@ -326,8 +417,16 @@ header {
 .nav__link span{ 
     display: block;
     height: 50px;
+    line-height: 50px;
+    width: 100%;
     font-size: 1.2rem;
     transition: 0.2s ease-in;
+}
+
+#app.open-nav .product {
+    margin-left: 200px;
+    width: calc(100% - 200px - 240px);
+
 }
 
 .product { 
@@ -406,6 +505,11 @@ header {
     visibility: visible;
 }
 
+.product__items.played .product__play-container {
+    opacity: 1;
+    visibility: visible;
+}
+
 .product__play-container { 
     opacity: 0;
     visibility: hidden;
@@ -431,6 +535,19 @@ header {
     font-size: 3rem;
     color: var(--grayHight);
 }
+
+.product__items .product__play a i:last-child { 
+    display: none;
+}
+
+.product__items.played .product__play a i:last-child { 
+    display: block;
+}
+
+.product__items.played .product__play a i:first-child { 
+    display: none;
+}
+
 
 .product__padder { 
     width: 100%;
@@ -459,6 +576,7 @@ header {
     width: 100%;
     height: 60px;
     background-color: #242D33;
+    z-index: 101;
 }
 
 .footer-container { 
@@ -522,7 +640,10 @@ header {
 }
 
 .progress {
+    position: absolute;
     width: 100%;
+    left: 0;
+    top: 6px;
     appearance: none;
     height: 5px;
     background: #d3d3d3;
