@@ -432,6 +432,7 @@ header {
 .product { 
     margin-top: 60px;
     margin-left: 70px;
+    margin-bottom: 60px;
     padding: 0 30px;
     width: calc(100% - 70px - 240px);
     background-color: #F2F4F8;
@@ -483,6 +484,9 @@ header {
 }
 
 .product__name { 
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
     font-size: 1.5rem;
     color: #545a5f;
     text-align: left;

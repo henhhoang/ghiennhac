@@ -93,6 +93,7 @@ const musicApp = {
 
           } else {
               btnNext.click();
+              _this.isLoad = undefined;
               $('.product__items.played') ? $('.product__items.played').classList.remove('played') : undefined;
           }
         }
