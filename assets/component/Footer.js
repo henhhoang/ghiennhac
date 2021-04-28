@@ -36,6 +36,12 @@ function Footer() {
 
                     <button class="listBtn">
                         <i class="fas fa-list"></i>
+                        <div class="playerList">
+                            <ul class="playerList__list">
+                                <li>
+                                </li>
+                            </ul>
+                        </div>
                     </button>
                 </div>
 
@@ -49,7 +55,7 @@ function Footer() {
 
                 <div class="control-right flex">
                     <span class="time">00:00</span>
-                    <button class="muteBtn">
+                    <button class="muteBtn active">
                         <i class="fas fa-volume-up"></i>
                     </button>
                     <button class="randomBtn">

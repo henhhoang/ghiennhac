@@ -1,10 +1,10 @@
 import html from '../js/core.js'
-import { connect } from '../js/store.js'
+import { connect } from '../js/store.js';
 
 
 function Song( {song, index} ) {
     return html`
-        <div class="product__items col c-2" data-song="${song.id}">
+        <div class="product__items col l-2 m-3 c-6" data-song="${song.id}">
             <div class="product__song">
                 <div class="product__top" style="background-image: url(${song.image});">
                     <span class="product__time">03:20</span>
@@ -23,10 +23,10 @@ function Song( {song, index} ) {
                             </a>
                         </div>
                         <div class="product__padder flex">
-                            <a href="#" class="prodcut__like">
+                            <a class="product__add">
                                 <i class="fas fa-plus-circle"></i>
                             </a>
-                            <a href="#" class="prodcut__heart">
+                            <a class="product__heart" onclick="event.stopPropagation()">
                                 <i class="fas fa-heart"></i>
                             </a>
                         </div>
@@ -35,8 +35,8 @@ function Song( {song, index} ) {
 
 
                 <div class="product__bottom">
-                    <a href="#" class="product__name">${song.name}</a>
-                    <a href="#" class="product__singer">${song.singer}</a>
+                    <a class="product__name">${song.name}</a>
+                    <a class="product__singer">${song.singer}</a>
                 </div>
             </div>
         </div>

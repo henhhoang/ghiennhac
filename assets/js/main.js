@@ -1,5 +1,6 @@
 import { attach } from './store.js'
 import { init } from './reducer.js'
+import html from '../js/core.js'
 import App from '../component/App.js'
 
 attach(App, document.getElementById('root'));
@@ -26,9 +27,12 @@ const progress = $('.progress');
 const progressFill = $('.progress-fill');
 const product = $('.songs');
 const btnNav = $('.header__button');
-
+const btnMute = $('.muteBtn');
+const playerList = $('.playerList__list')
+const btnMyList = $('.listBtn')
 
 console.log()
+
 
 const musicApp = {
     songs: songs,
@@ -38,6 +42,8 @@ const musicApp = {
     isRandom: false,
     isOpenNav: false,
     isLoad: undefined,
+    isMuted: false,
+    myListSongs: [],
     currentIndex: 0,
 
     //Dinh dang phuong thuc
@@ -78,12 +84,14 @@ const musicApp = {
         btnNext.onclick = function() {
             _this.nextSong();
             audio.play();
+            $('.product__items.played') ? $('.product__items.played').classList.remove('played') : undefined;
         }
 
         //xu ly khi prev
         btnPrev.onclick = function() {
           _this.prevSong()
           audio.play();
+          $('.product__items.played') ? $('.product__items.played').classList.remove('played') : undefined;
         }
 
         // Xu ly su kien khi end song
@@ -126,6 +134,13 @@ const musicApp = {
           _this.isUpdateTime = false;
         });
 
+        //Xu ly khi mute
+        btnMute.onclick = function() {
+          _this.isMuted = !_this.isMuted;
+          this.classList.toggle('active', !_this.isMuted);
+          _this.isMuted ? audio.muted = true : audio.muted = false;
+        },
+
         //Xu ly khi repeat
         btnRepeat.onclick = function() {
           _this.isRepeat = !_this.isRepeat;
@@ -138,13 +153,16 @@ const musicApp = {
           this.classList.toggle('active', _this.isRepeat);
         }
 
-        //Phat bai hat nguoi dung click
+        //Xu ly khi nguoi dung click (play, add, like) tren product
         product.onclick = function(e) {
           const productElement = e.target.closest('.product__items');
           const productPlayed = $('.product__items.played')
           if (productElement) {
             let dataSong = productElement.dataset.song;
+            
+            //Nguoi dung click vao play
             if (e.target.closest('.product__play')) {
+              _this.removeLastPlaying();
               if (_this.isLoad === dataSong) {
                 if (_this.isPlaying) {
                   audio.pause();
@@ -154,7 +172,6 @@ const musicApp = {
                   productElement.classList.add('played');
                 }
               } else {
-                
                 _this.isLoad = dataSong;
                 _this.loadSongWhenClick(dataSong)
                 _this.isPlaying = true;
@@ -163,10 +180,41 @@ const musicApp = {
                 audio.play();
               }
             }
+
+            //Nguoi dung click vao add
+            if (e.target.closest('.product__add')) {
+              btnMyList.classList.add('open')
+              let song = songs.find( item => item.id === Number(dataSong));
+              if (_this.myListSongs.length === 0) {
+                _this.myListSongs.push(song)
+                _this.renderMyList();
+                
+              } else {
+                if (_this.myListSongs.every( item => item.id != dataSong)) {
+                  _this.myListSongs.push(song)
+                  _this.renderMyList();
+                }
+
+              }
+            }
           }
         }
 
-
+        //Xu ly khi nguoi dung click trong myList
+        playerList.onclick = function(e) {
+          e.stopPropagation()
+          const myListElement = e.target.closest('.playerSong');
+          if (myListElement) {
+            if (myListElement) {
+              const btnMyPlay = myListElement.querySelector('.btnMyPlay');
+              _this.currentIndex = Number(myListElement.dataset.song);
+              _this.loadCurrentSong()
+              _this.removeLastPlaying();
+              btnMyPlay.classList.add('playing')
+              audio.play();
+            }            
+          }
+        }
     },
 
 
@@ -241,13 +289,56 @@ const musicApp = {
             }
           });
         }
+
+        if (
+            !e.target.closest('.playerList') &&
+            !e.target.closest('.product__add') && 
+            !e.target.closest('.progress-container') &&
+            !e.target.closest('.control-left')
+          ) {
+          btnMyList.classList.remove('open')
+        }
       }
+
+      //open myList 
+      btnMyList.onclick = function(e) {
+        this.classList.toggle('open')
+        e.stopPropagation();
+      } 
+
+
       
     },
+
+    //Render my list
+    renderMyList: function () {
+      playerList.innerHTML = this.myListSongs.reverse().map( item => {
+        return html `
+          <li>
+            <div class="playerSong" data-song="${item.id}">
+                <span class="btnMyPlay">
+                    <i class="fas fa-play 
+                    play"></i>
+                    <i class="fas fa-play-circle playing"></i>
+                </span>
+                <span class="song-name"><strong>${item.name}</strong> by ${item.singer}</span>
+                <span class="remove" onclick="event.stopPropagation()"><i class="fas fa-times"></i></span>
+            </div>
+          </li>
+        `
+      }).join('')
+    },
     
+    //Remove playing song dang phat truoc do
+    removeLastPlaying: function() {
+      if ($('.btnMyPlay.playing')) {
+        $('.btnMyPlay.playing').classList.remove('playing');
+      }
 
-
-
+      if ($('.product__items.played')) {
+        $('.product__items.played').classList.remove('played');
+      }
+    },
 
     start: function() {
 
@@ -264,6 +355,10 @@ const musicApp = {
 }
 
 musicApp.start();
+
+
+
+
 
 
 

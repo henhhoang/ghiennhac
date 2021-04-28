@@ -10,7 +10,12 @@ function Header() {
                 <input type="checkbox" id="header__button" class="display-none">
                 <div class="header__search">
                     <button class="search__button"><i class="fas fa-search"></i></button>
-                    <input type="input" class="search__input" placeholder="Search songs, ablums">
+                    <input
+                        type="input"
+                        class="search__input"
+                        placeholder="Search songs, ablums"
+                        onkeyup="event.keyCode === 13 && dispatch('add', this.value.trim())"
+                    >
                 </div>
 
                 <div class="player">

@@ -40,32 +40,26 @@ function Nav() {
             <ul class="nav__list list-setting small">
                 <li class="nav__items">
                     <a href="#" class="nav__link">
-                        <i class="cd fas fa-compact-disc"></i>
+                        <i class="fas fa-tv"></i>
                         <span>What's New</span>
                     </a>
                 </li>
                 <li class="nav__items">
                     <a href="#" class="nav__link">
-                        <i class="Genres fas fa-music"></i>
+                        <i class="fab fa-battle-net"></i>
                         <span>Genres</span>
                     </a>
                 </li>
                 <li class="nav__items">
                     <a href="#" class="nav__link">
-                        <i class="Events fas fa-archive"></i>
+                        <i class="fas fa-th-large"></i>
                         <span>Events</span>
                     </a>
                 </li>
                 <li class="nav__items">
                     <a href="#" class="nav__link">
-                        <i class="Listen fas fa-list"></i>
+                        <i class="fab fa-spotify"></i>
                         <span>Listen</span>
-                    </a>
-                </li>
-                <li class="nav__items">
-                    <a href="#" class="nav__link">
-                        <i class="Video fab fa-youtube"></i>
-                        <span>Video</span>
                     </a>
                 </li>
             </ul>
