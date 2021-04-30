@@ -18,7 +18,7 @@ function Header() {
                     >
                 </div>
 
-                <div class="player">
+                <div class="player hide-sm hide">
                     <div class="notification clickToggle main">
                         <button class="notification__button">
                             <i class="far fa-bell"></i>
@@ -63,7 +63,7 @@ function Header() {
                         </div>
                     </div>
 
-                    <div class="profile clickToggle main">
+                    <div class="profile clickToggle main hide-sm hide">
                         <a href="#" class="profile__name">John.Smith <i class="fas fa-caret-down"></i></a>
                         <span class="avatar">
                             <img src="./assets/img/avatar.png">

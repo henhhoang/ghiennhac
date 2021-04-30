@@ -5,7 +5,7 @@ function Footer() {
         <div class="footer">
             <div class="footer-container flex">
 
-                <div class="profile clickToggle main">
+                <div class="profile clickToggle main hide-sm hide">
                     <span class="avatar">
                         <img src="./assets/img/avatar.png">
                     </span>
@@ -45,7 +45,7 @@ function Footer() {
                     </button>
                 </div>
 
-                <div class="range-container flex">
+                <div class="range-container flex hide-sm hide">
                     <span class="name-song"></span>
                     <div class="progress-container">
                         <input class="progress" type="range" min="0" max="100" value="0">
@@ -66,7 +66,7 @@ function Footer() {
                     </button>
                 </div>
 
-                <div class="header__search flex">
+                <div class="header__search flex hide-sm hide">
                     <button class="search__button"><i class="fas fa-search"></i></button>
                     <input type="input" class="search__input" placeholder="Search songs, ablums">
                 </div>

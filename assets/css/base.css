@@ -11,12 +11,11 @@
     --text: #333;
     --nav-color: #232c32;
     --header_height: 60px;
-
 }
 
 * {
     box-sizing: inherit;
-    font-family: 'Alegreya', serif;
+    font-family: "Alegreya", serif;
     outline: none;
     list-style: none;
 }
@@ -36,7 +35,7 @@ html {
     font-size: 62.5%;
     line-height: 1.6rem;
     box-sizing: border-box;
-    -webkit-tap-highlight-color: rgba(0,0,0,0);
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 .container {
@@ -69,4 +68,3 @@ html {
 .flex {
     display: flex;
 }
-
