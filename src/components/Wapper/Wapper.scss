@@ -1,0 +1,23 @@
+@import "../style/style.scss";
+
+$color-white: #ffffff;
+$color-cyan: #4cb6cb;
+$color-grayHight: #788188;
+$color-black: #262626;
+$color-blackLow: #232c32;
+$color-green: #1ab667;
+$color-violet: #232c32;
+$color-gray: #e8eff0;
+$color-red: #f05050;
+$color-text: #333;
+$color-nav-color: #232c32;
+
+$width-low: 70px;
+$width-hight: 200px;
+
+.wapper {
+    display: flex;
+    padding-top: $height-Header;
+    width: 100%;
+    height: 100vh;
+}

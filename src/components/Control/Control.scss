@@ -1,0 +1,70 @@
+$color-white: #ffffff;
+$color-cyan: #4cb6cb;
+$color-grayHight: #788188;
+$color-black: #262626;
+$color-blackLow: #232c32;
+$color-green: #1ab667;
+$color-violet: #232c32;
+$color-gray: #e8eff0;
+$color-red: #f05050;
+$color-text: #333;
+$color-nav-color: #232c32;
+
+.control {
+    position: sticky;
+    top: auto;
+    transform: translateY(25px);
+    bottom: 0;
+    width: 100%;
+    height: 60px;
+    background-color: #5a6a7a;
+    .control-container {
+        height: 100%;
+        width: 100%;
+        align-items: center;
+        padding: 0 20px;
+        .item {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            width: 35px;
+            font-size: 2rem;
+            .control-button {
+                padding: 0;
+                margin-top: 5px;
+                width: 100%;
+                color: $color-white;
+            }
+        }
+        .item.btn-play {
+            font-size: 2.6rem;
+        }
+        .item.time {
+            font-size: 1.2rem;
+            color: $color-gray;
+        }
+        .item.btn-mute {
+            font-size: 1.5rem;
+        }
+
+        .item.btn-range {
+            padding: 0 30px;
+            flex: 1;
+            background-color: #4d5d6e;
+            margin: 0 10px;
+            .css-yvszuv-Slider {
+                width: 100%;
+                height: 5px;
+                cursor: pointer;
+                .css-3g5hux-Slider {
+                    background-color: $color-grayHight;
+                    border-radius: 5px;
+                }
+                .css-1ldz52l-Slider {
+                    width: 10px;
+                    height: 10px;
+                }
+            }
+        }
+    }
+}

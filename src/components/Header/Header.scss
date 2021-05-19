@@ -1,0 +1,108 @@
+@import "../style/style.scss";
+
+header {
+    $color-white: #ffffff;
+    $color-cyan: #4cb6cb;
+    $color-grayHight: #788188;
+    $color-black: #262626;
+    $color-blackLow: #232c32;
+    $color-cyan: #4cb6cb;
+    $color-green: #1ab667;
+    $color-violet: #232c32;
+    $color-gray: #e8eff0;
+    $color-red: #f05050;
+    $color-text: #333;
+    $color-nav-color: #232c32;
+    display: block;
+    position: fixed !important;
+    height: $height-Header;
+    width: 100%;
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    left: 0;
+    margin-bottom: 0;
+    padding: 0;
+    z-index: 100000;
+    background-color: $color-white;
+
+    .header {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+
+        .home,
+        .toggle-header {
+            height: $height-Header;
+            text-align: center;
+            width: 70px;
+            font-size: 23px;
+            font-weight: 500;
+            background-color: $color-cyan;
+            color: $color-white;
+            overflow: hidden;
+            svg {
+                margin-bottom: 5px;
+            }
+            span {
+                display: none;
+            }
+        }
+
+        .home.open {
+            display: flex;
+            width: 200px;
+            padding: 0 25px;
+            padding-top: 5px;
+            align-items: center;
+
+            span {
+                display: block;
+                margin-top: -6px;
+                margin-left: 10px;
+            }
+        }
+
+        .home.open ~ .toggle-header {
+            background-color: $color-gray;
+            color: $color-black;
+        }
+
+        .toggle-header {
+            width: 50px;
+            background-color: $color-white;
+            color: $color-grayHight;
+            font-size: 20px;
+        }
+
+        .toggle-header:hover {
+            background-color: $color-gray;
+            color: $color-black;
+        }
+
+        .search {
+            display: flex;
+
+            .button {
+                font-size: 20px;
+                color: $color-grayHight;
+                font-weight: 500;
+            }
+
+            .button:hover {
+                color: $color-blackLow;
+            }
+
+            .input-search {
+                border: none;
+                font-size: 14px;
+                color: $color-grayHight;
+                outline: none;
+            }
+        }
+
+        .left {
+            margin-left: auto;
+            display: flex;
+        }
+    }
+}

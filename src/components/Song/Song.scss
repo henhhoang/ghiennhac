@@ -1,0 +1,126 @@
+$color-white: #ffffff;
+$color-cyan: #4cb6cb;
+$color-grayHight: #788188;
+$color-black: #262626;
+$color-blackLow: #232c32;
+$color-green: #1ab667;
+$color-violet: #232c32;
+$color-gray: #e8eff0;
+$color-red: #f05050;
+$color-text: #333;
+$color-nav-color: #232c32;
+
+$width-low: 70px;
+$width-hight: 200px;
+
+.items {
+    margin-bottom: 15px;
+    .song {
+        position: relative;
+
+        .top {
+            position: relative;
+            .img {
+                display: inline;
+                background-color: transparent;
+                img {
+                    width: 100%;
+                    border-radius: 4px;
+                    vertical-align: middle;
+                    border: 0;
+                }
+            }
+            .time {
+                position: absolute;
+                bottom: 5px;
+                left: 10px;
+                min-width: 10px;
+                border-radius: 10px;
+                padding: 1px 7px;
+                background-color: #4cb6cb;
+                color: $color-white;
+                font-weight: 500;
+                font-size: 1.2rem;
+            }
+            .play-container {
+                opacity: 0;
+                visibility: hidden;
+                display: block;
+                width: 100%;
+                position: absolute;
+                height: 100%;
+                background-color: rgba(0, 0, 0, 0.75);
+                top: 0;
+                left: 0;
+                border-radius: 6px;
+                .star {
+                    font-size: 1.2rem;
+                    color: $color-cyan;
+                    padding: 10px;
+                    position: absolute;
+                    top: 0;
+                }
+                .play {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-size: 3rem;
+                    button {
+                        color: $color-grayHight;
+                    }
+                    button:hover {
+                        color: $color-gray;
+                    }
+                }
+                .padder {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    justify-content: space-between;
+                    padding: 5px 10px;
+                    font-size: 1.3rem;
+                    .add {
+                        color: $color-gray;
+                    }
+                    .heart {
+                        color: $color-red;
+                    }
+                }
+            }
+        }
+
+        .bottom {
+            padding-top: 10px;
+            display: flex;
+            flex-direction: column;
+            .name {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 1.4rem;
+                color: #545a5f;
+                text-align: left;
+                margin-bottom: 3px;
+            }
+            .singer {
+                text-align: left;
+                font-size: 1.2rem;
+                color: $color-grayHight;
+            }
+            a:hover {
+                color: $color-text;
+            }
+        }
+    }
+}
+
+.items:hover {
+    .top {
+        .play-container {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+}

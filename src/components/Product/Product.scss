@@ -1,0 +1,67 @@
+$color-white: #ffffff;
+$color-cyan: #4cb6cb;
+$color-grayHight: #788188;
+$color-black: #262626;
+$color-blackLow: #232c32;
+$color-green: #1ab667;
+$color-violet: #232c32;
+$color-gray: #e8eff0;
+$color-red: #f05050;
+$color-text: #333;
+$color-nav-color: #232c32;
+
+$width-low: 70px;
+$width-hight: 200px;
+
+.product {
+    position: relative;
+    flex: 1;
+    background-color: #f2f4f8;
+    padding-bottom: 25px;
+
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    .box-product {
+        padding: 0 30px;
+    }
+    .discover {
+        font-size: 2.5rem;
+        font-weight: 500;
+        color: $color-grayHight;
+        cursor: default;
+    }
+    .rattings-songs {
+        margin-top: 25px;
+        .discover {
+            margin-top: 0;
+        }
+    }
+}
+
+.product::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.product::-webkit-scrollbar-track {
+    background: #eeeeee;
+}
+
+/* Handle */
+.product::-webkit-scrollbar-thumb {
+    background: rgb(180, 180, 180);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.product::-webkit-scrollbar-thumb:hover {
+    background: rgb(119, 119, 119);
+}
+
+.product::-webkit-scrollbar-button {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(50, 50, 50, 0.05);
+}

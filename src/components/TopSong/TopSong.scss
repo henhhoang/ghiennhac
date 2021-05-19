@@ -1,0 +1,63 @@
+$color-white: #ffffff;
+$color-cyan: #4cb6cb;
+$color-grayHight: #788188;
+$color-black: #262626;
+$color-blackLow: #232c32;
+$color-green: #1ab667;
+$color-violet: #232c32;
+$color-gray: #e8eff0;
+$color-red: #f05050;
+$color-text: #333;
+$color-nav-color: #232c32;
+
+.top-songs {
+    ul {
+        background-color: $color-white;
+        padding: 0;
+        border-radius: 5px;
+        border: 1px solid $color-gray;
+        li {
+            a {
+                display: flex;
+                width: 100%;
+                padding: 10px 15px;
+                padding-right: 20px;
+                align-items: center;
+                .avatar {
+                    width: 50px;
+                    height: 50px;
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 50%;
+                    }
+                }
+                .box {
+                    display: flex;
+                    flex-direction: column;
+                    margin-left: 15px;
+                    span {
+                        text-align: left;
+                    }
+                    .name-song {
+                        font-size: 1.3rem;
+                        color: $color-blackLow;
+                    }
+                    .singer {
+                        font-size: 1.1rem;
+                        color: $color-grayHight;
+                    }
+                }
+                .top-number {
+                    margin-left: auto;
+                    font-size: 2.5rem;
+                    color: $color-grayHight;
+                }
+            }
+        }
+
+        li + li {
+            border-top: 1px solid $color-gray;
+        }
+    }
+}

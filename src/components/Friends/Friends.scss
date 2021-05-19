@@ -1,0 +1,106 @@
+$color-white: #ffffff;
+$color-cyan: #4cb6cb;
+$color-grayHight: #788188;
+$color-black: #262626;
+$color-blackLow: #232c32;
+$color-green: #1ab667;
+$color-violet: #232c32;
+$color-gray: #e8eff0;
+$color-red: #f05050;
+$color-text: #333;
+$color-nav-color: #232c32;
+$color-yellow: #fad733;
+
+.friends {
+    width: 240px;
+    height: 100%;
+    padding: 20px;
+    background-color: #e0eaec;
+    overflow-x: hidden;
+
+    .connected {
+        color: $color-grayHight;
+        font-size: 1.8rem;
+        font-weight: 400;
+    }
+    ul {
+        padding: 0;
+        .friend {
+            display: flex;
+            padding: 10px 0;
+            .img {
+                position: relative;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    border-radius: 50%;
+                }
+                .status {
+                    position: absolute;
+                    width: 11px;
+                    height: 11px;
+                    background-color: $color-white;
+
+                    border-radius: 50%;
+                    border: 2px solid $color-white;
+                    top: 0;
+                    right: 0;
+                    transform: translateX(15%);
+                }
+                .status.Error {
+                    background-color: $color-red;
+                }
+                .status.Warning {
+                    background-color: $color-yellow;
+                }
+                .status.Success {
+                    background-color: $color-green;
+                }
+            }
+            .info {
+                padding: 0 10px;
+                display: flex;
+                flex-direction: column;
+                .name {
+                    font-size: 1.4rem;
+                    color: $color-text;
+                    text-align: left;
+                }
+                .from {
+                    font-size: 1.2rem;
+                    color: $color-grayHight;
+                }
+            }
+        }
+    }
+}
+
+.friends:hover {
+    overflow: auto;
+}
+
+.friends::-webkit-scrollbar {
+    width: 5px;
+}
+
+/* Track */
+.friends::-webkit-scrollbar-track {
+    background: #eeeeee;
+}
+
+/* Handle */
+.friends::-webkit-scrollbar-thumb {
+    background: rgb(180, 180, 180);
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+.friends::-webkit-scrollbar-thumb:hover {
+    background: rgb(119, 119, 119);
+}
+
+.friends::-webkit-scrollbar-button {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(50, 50, 50, 0.05);
+}

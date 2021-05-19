@@ -1,0 +1,41 @@
+$color-white: #ffffff;
+$color-cyan: #4cb6cb;
+$color-grayHight: #788188;
+$color-black: #262626;
+$color-blackLow: #232c32;
+$color-cyan: #4cb6cb;
+$color-green: #1ab667;
+$color-violet: #232c32;
+$color-gray: #e8eff0;
+$color-red: #f05050;
+$color-text: #333;
+$color-nav-color: #232c32;
+
+.notification {
+    position: relative;
+    margin-left: auto;
+
+    .button {
+        position: relative;
+        height: 100%;
+        width: 50px;
+        font-size: 2rem;
+        color: $color-grayHight;
+
+        .bell-number {
+            position: absolute;
+            background-color: $color-red;
+            min-width: 8px;
+            padding: 0 4px;
+            font-size: 1.3rem;
+            color: $color-white;
+            border-radius: 50%;
+            top: 23%;
+            right: 19%;
+        }
+    }
+}
+
+.notification:hover {
+    background-color: $color-gray;
+}

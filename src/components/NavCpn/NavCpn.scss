@@ -1,0 +1,160 @@
+$color-white: #ffffff;
+$color-cyan: #4cb6cb;
+$color-grayHight: #788188;
+$color-black: #262626;
+$color-blackLow: #232c32;
+$color-green: #1ab667;
+$color-violet: #232c32;
+$color-gray: #e8eff0;
+$color-red: #f05050;
+$color-text: #333;
+$color-nav-color: #232c32;
+
+$width-low: 70px;
+$width-hight: 200px;
+
+.nav-container {
+    display: flex;
+    flex-direction: column;
+    width: $width-low;
+    .nav-Left {
+        position: relative;
+        left: 0;
+        top: 0;
+        background-color: #181f24;
+        color: #627b8c;
+
+        height: 100vh;
+        z-index: 100;
+
+        .discover {
+            display: block;
+
+            padding-top: 10px;
+            padding-left: 10px;
+            font-size: 1.3rem;
+        }
+
+        ul {
+            background-color: $color-nav-color;
+            margin-top: 10px;
+            padding: 0;
+
+            li {
+                color: #8ca1af;
+                text-align: center;
+                cursor: pointer;
+
+                a {
+                    position: relative;
+                    width: 100%;
+                    height: 50px;
+                    overflow: hidden;
+
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    color: inherit;
+                    text-decoration: none;
+
+                    span {
+                        display: block;
+                        line-height: 50px;
+                        white-space: nowrap;
+                        height: 50px;
+
+                        transition: 0.2s ease all;
+                    }
+                    .img {
+                        font-size: 1.6rem;
+                    }
+                    .text {
+                        font-size: 1.2rem;
+                    }
+                }
+                a:hover {
+                    span {
+                        transform: translateY(-100%);
+                    }
+
+                    .text {
+                        color: $color-gray;
+                    }
+                }
+            }
+
+            li:hover {
+                background-color: #2c3942;
+            }
+        }
+    }
+    .profile.bottom {
+        .profile-container {
+            .name {
+                display: none;
+            }
+        }
+    }
+}
+
+.nav-container.open {
+    width: $width-hight;
+    .nav-Left {
+        ul {
+            background-color: $color-nav-color;
+            margin-top: 10px;
+            padding: 0;
+
+            li {
+                display: block;
+                cursor: pointer;
+                padding: 0 25px;
+                color: #8ca1af;
+
+                a {
+                    position: relative;
+                    display: block;
+                    width: 100%;
+                    height: 50px;
+
+                    text-align: left;
+                    overflow: hidden;
+
+                    font-size: 1.8rem;
+                    font-weight: 600;
+                    color: inherit;
+                    text-decoration: none;
+
+                    span {
+                        display: inline-block;
+                        line-height: 50px;
+                        white-space: nowrap;
+                        height: 50px;
+
+                        transition: 0.2s ease all;
+                    }
+                    span + span {
+                        margin-left: 15px;
+                    }
+                    .img {
+                        font-size: 1.6rem;
+                    }
+                    .text {
+                        font-size: 1.3rem;
+                    }
+                }
+                a:hover {
+                    span {
+                        transform: unset;
+                    }
+                }
+            }
+        }
+    }
+    .profile.bottom {
+        .profile-container {
+            .name {
+                display: block;
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.flex {
+    display: flex;
+}
+
+$height-Header: 60px;
+
+html {
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    box-sizing: border-box;
+}
+
+a,
+button,
+label {
+    display: inline-block;
+    text-align: center;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: inherit;
+    color: unset;
+}
+
+* {
+    list-style: none;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}

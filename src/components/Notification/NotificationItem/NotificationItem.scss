@@ -1,0 +1,95 @@
+$color-white: #ffffff;
+$color-cyan: #4cb6cb;
+$color-grayHight: #788188;
+$color-black: #262626;
+$color-blackLow: #232c32;
+$color-cyan: #4cb6cb;
+$color-green: #1ab667;
+$color-violet: #232c32;
+$color-gray: #e8eff0;
+$color-red: #f05050;
+$color-text: #333;
+$color-nav-color: #232c32;
+
+.notification-form {
+    display: none;
+    position: absolute;
+    width: 360px;
+    right: 0;
+    border: 1px solid $color-grayHight;
+    background-color: $color-white;
+
+    h4 {
+        background-color: $color-gray;
+        margin: 0;
+        padding: 10px 15px;
+        font-size: 1.5rem;
+        color: $color-grayHight;
+        border-bottom: 1px solid $color-grayHight;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: column;
+
+        .group + .group {
+            border-top: 1px solid $color-gray;
+        }
+
+        .group:hover {
+            background-color: $color-gray;
+        }
+
+        .group {
+            text-align: left;
+            display: flex;
+            padding: 10px 5px;
+            text-decoration: none;
+
+            .avatar {
+                font-size: 3rem;
+                width: 40px;
+                height: 40px;
+                line-height: 30px;
+                text-align: center;
+                color: $color-green;
+
+                img {
+                    width: 40px;
+                    height: 40px;
+                    border-radius: 50%;
+                }
+            }
+            .content {
+                font-size: 1.4rem;
+                color: $color-blackLow;
+                margin-left: 10px;
+                padding: 2px 0;
+
+                small {
+                    font-size: 1.2rem;
+                    color: $color-grayHight;
+                }
+            }
+        }
+    }
+
+    .setting {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        padding: 8px 10px 8px 15px;
+        border-top: 2px solid $color-gray;
+        background-color: #f7fafa;
+
+        span,
+        .cog {
+            font-size: 1.4rem;
+            color: $color-grayHight;
+        }
+    }
+}
+
+.notification-form.show {
+    display: block;
+}
