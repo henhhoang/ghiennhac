@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/ghiennhac/static/css/main.fcee96b1.chunk.css",
-    "main.js": "/ghiennhac/static/js/main.de775ee7.chunk.js",
-    "main.js.map": "/ghiennhac/static/js/main.de775ee7.chunk.js.map",
+    "main.css": "/ghiennhac/static/css/main.5516f926.chunk.css",
+    "main.js": "/ghiennhac/static/js/main.b18f8c74.chunk.js",
+    "main.js.map": "/ghiennhac/static/js/main.b18f8c74.chunk.js.map",
     "runtime-main.js": "/ghiennhac/static/js/runtime-main.b43fb206.js",
     "runtime-main.js.map": "/ghiennhac/static/js/runtime-main.b43fb206.js.map",
-    "static/js/2.7aa80f8d.chunk.js": "/ghiennhac/static/js/2.7aa80f8d.chunk.js",
-    "static/js/2.7aa80f8d.chunk.js.map": "/ghiennhac/static/js/2.7aa80f8d.chunk.js.map",
+    "static/js/2.fd509399.chunk.js": "/ghiennhac/static/js/2.fd509399.chunk.js",
+    "static/js/2.fd509399.chunk.js.map": "/ghiennhac/static/js/2.fd509399.chunk.js.map",
     "static/js/3.470abd41.chunk.js": "/ghiennhac/static/js/3.470abd41.chunk.js",
     "static/js/3.470abd41.chunk.js.map": "/ghiennhac/static/js/3.470abd41.chunk.js.map",
     "index.html": "/ghiennhac/index.html",
-    "static/css/main.fcee96b1.chunk.css.map": "/ghiennhac/static/css/main.fcee96b1.chunk.css.map",
-    "static/js/2.7aa80f8d.chunk.js.LICENSE.txt": "/ghiennhac/static/js/2.7aa80f8d.chunk.js.LICENSE.txt"
+    "static/css/main.5516f926.chunk.css.map": "/ghiennhac/static/css/main.5516f926.chunk.css.map",
+    "static/js/2.fd509399.chunk.js.LICENSE.txt": "/ghiennhac/static/js/2.fd509399.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b43fb206.js",
-    "static/js/2.7aa80f8d.chunk.js",
-    "static/css/main.fcee96b1.chunk.css",
-    "static/js/main.de775ee7.chunk.js"
+    "static/js/2.fd509399.chunk.js",
+    "static/css/main.5516f926.chunk.css",
+    "static/js/main.b18f8c74.chunk.js"
   ]
 }
