@@ -127,11 +127,74 @@ const init = {
             name: 'Thay tôi yêu cô ấy',
             singer: 'Trần Trân',
             path: './assets/songs/thaytoi.mp3',
-            image: './assets/img/item1.jpg'
+            image: './assets/img/item7.jpg'
+        },
+        {
+            id: 18,
+            name: 'Bước vu quy',
+            singer: 'Trần Trân',
+            path: './assets/songs/buocvuquy.mp3',
+            image: './assets/img/item4.jpg'
+        },
+        {
+            id: 19,
+            name: 'Chân ái phai mau',
+            singer: 'Trần Trân',
+            path: './assets/songs/chanaiphaimau.mp3',
+            image: './assets/img/item12.jpg'
+        },
+        {
+            id: 20,
+            name: 'Chỉ là không giống nhau',
+            singer: 'Trần Trân',
+            path: './assets/songs/chilakhongcungnhau.mp3',
+            image: './assets/img/item11.jpg'
+        },
+        {
+            id: 21,
+            name: 'Cô phương tự hưởng',
+            singer: 'Trần Trân',
+            path: './assets/songs/cophuongtuhuong.mp3',
+            image: './assets/img/item6.jpg'
+        },
+        {
+            id: 22,
+            name: 'Kết duyên',
+            singer: 'Trần Trân',
+            path: './assets/songs/kd.mp3',
+            image: './assets/img/item8.jpg'
+        },
+        {
+            id: 23,
+            name: 'Thiệp hông người dưng',
+            singer: 'Trần Trân',
+            path: './assets/songs/thnd.mp3',
+            image: './assets/img/item9.jpg'
+        },
+        {
+            id: 24,
+            name: 'Chỉ vì quá yêu',
+            singer: 'Trần Trân',
+            path: './assets/songs/chiviquayeu.mp3',
+            image: './assets/img/item16.jpg'
+        },
+        {
+            id: 25,
+            name: 'Kiếp duyên không thành',
+            singer: 'Trần Trân',
+            path: './assets/songs/kdkt.mp3',
+            image: './assets/img/item15.jpg'
+        },
+        {
+            id: 26,
+            name: 'Bồ đề kết',
+            singer: 'Trần Trân',
+            path: './assets/songs/bodeket.mp3',
+            image: './assets/img/item17.jpg'
         }
-        
+
     ]
-    
+
 }
 
 const actions = {

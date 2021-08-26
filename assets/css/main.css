@@ -448,7 +448,7 @@ header {
     font-weight: 500;
     color: var(--grayHight);
     cursor: default;
-    padding-top: 20px;
+    padding-top: 70px;
 }
 
 .product__items {
@@ -466,7 +466,6 @@ header {
 .product__top {
     height: 240px;
     position: relative;
-    background-image: url(../img/item1.jpg);
     background-position: center;
     background-size: cover;
     border-radius: 6px;
@@ -570,11 +569,11 @@ header {
     font-size: 1.3rem;
 }
 
-.product__add {
+.product__add i {
     color: var(--grayHight);
 }
 
-.product__heart {
+.product__heart i {
     color: var(--red);
 }
 
